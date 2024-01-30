@@ -24,8 +24,8 @@ namespace _9___Classe_frazione
             }
             else
             {
-                int n = Convert.ToInt16(num_box.Text);
-                int d = Convert.ToInt16(den_box.Text);
+                int n = Convert.ToInt32(num_box.Text);
+                int d = Convert.ToInt32(den_box.Text);
                 Frazione frazione = new Frazione(n, d);
                 ris_box.Text = frazione.somma(n, d).ToString();
             }
@@ -39,8 +39,8 @@ namespace _9___Classe_frazione
             }
             else
             {
-                int n = Convert.ToInt16(num_box.Text);
-                int d = Convert.ToInt16(den_box.Text);
+                int n = Convert.ToInt32(num_box.Text);
+                int d = Convert.ToInt32(den_box.Text);
                 Frazione frazione = new Frazione(n, d);
                 ris_box.Text = frazione.sottrai(n, d).ToString();
             }
@@ -54,8 +54,8 @@ namespace _9___Classe_frazione
             }
             else
             {
-                int n = Convert.ToInt16(num_box.Text);
-                int d = Convert.ToInt16(den_box.Text);
+                int n = Convert.ToInt32(num_box.Text);
+                int d = Convert.ToInt32(den_box.Text);
                 Frazione frazione = new Frazione(n, d);
                 ris_box.Text = frazione.moltiplica(n, d).ToString();
             }
@@ -69,8 +69,8 @@ namespace _9___Classe_frazione
             }
             else
             {
-                int n = Convert.ToInt16(num_box.Text);
-                int d = Convert.ToInt16(den_box.Text);
+                int n = Convert.ToInt32(num_box.Text);
+                int d = Convert.ToInt32(den_box.Text);
                 Frazione frazione = new Frazione(n, d);
                 ris_box.Text = frazione.divisione(n, d).ToString();
             }
@@ -84,8 +84,8 @@ namespace _9___Classe_frazione
             }
             else
             {
-                int n = Convert.ToInt16(num_box.Text);
-                int d = Convert.ToInt16(den_box.Text);
+                int n = Convert.ToInt32(num_box.Text);
+                int d = Convert.ToInt32(den_box.Text);
                 Frazione frazione = new Frazione(n, d);
                 frazione.Semplificazione();
                 ris_box.Text = $"{frazione.Numeratore} / {frazione.Denominatore}";
