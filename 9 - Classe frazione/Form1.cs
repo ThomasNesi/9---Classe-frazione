@@ -18,43 +18,78 @@ namespace _9___Classe_frazione
         }
         private void ad_btn_Click(object sender, EventArgs e)
         {
-            int n = Convert.ToInt16(num_box.Text);
-            int d = Convert.ToInt16(den_box.Text);
-            Frazione frazione = new Frazione(n, d);
-            ris_box.Text = frazione.somma(n, d).ToString();
+            if (string.IsNullOrEmpty(num_box.Text) || string.IsNullOrEmpty(den_box.Text))
+            {
+                MessageBox.Show("Non hai inserito nulla!");
+            }
+            else
+            {
+                int n = Convert.ToInt16(num_box.Text);
+                int d = Convert.ToInt16(den_box.Text);
+                Frazione frazione = new Frazione(n, d);
+                ris_box.Text = frazione.somma(n, d).ToString();
+            }
         }
 
         private void sot_btn_Click(object sender, EventArgs e)
         {
-            int n = Convert.ToInt16(num_box.Text);
-            int d = Convert.ToInt16(den_box.Text);
-            Frazione frazione = new Frazione(n, d);
-            ris_box.Text = frazione.sottrai(n, d).ToString();
+            if (string.IsNullOrEmpty(num_box.Text) || string.IsNullOrEmpty(den_box.Text))
+            {
+                MessageBox.Show("Non hai inserito nulla!");
+            }
+            else
+            {
+                int n = Convert.ToInt16(num_box.Text);
+                int d = Convert.ToInt16(den_box.Text);
+                Frazione frazione = new Frazione(n, d);
+                ris_box.Text = frazione.sottrai(n, d).ToString();
+            }
         }
 
         private void molt_btn_Click(object sender, EventArgs e)
         {
-            int n = Convert.ToInt16(num_box.Text);
-            int d = Convert.ToInt16(den_box.Text);
-            Frazione frazione = new Frazione(n, d);
-            ris_box.Text = frazione.moltiplica(n, d).ToString();
+            if (string.IsNullOrEmpty(num_box.Text) || string.IsNullOrEmpty(den_box.Text))
+            {
+                MessageBox.Show("Non hai inserito nulla!");
+            }
+            else
+            {
+                int n = Convert.ToInt16(num_box.Text);
+                int d = Convert.ToInt16(den_box.Text);
+                Frazione frazione = new Frazione(n, d);
+                ris_box.Text = frazione.moltiplica(n, d).ToString();
+            }
         }
 
         private void div_btn_Click(object sender, EventArgs e)
         {
-            int n = Convert.ToInt16(num_box.Text);
-            int d = Convert.ToInt16(den_box.Text);
-            Frazione frazione = new Frazione(n, d);
-            ris_box.Text = frazione.divisione(n, d).ToString();
+            if (string.IsNullOrEmpty(num_box.Text) || string.IsNullOrEmpty(den_box.Text))
+            {
+                MessageBox.Show("Non hai inserito nulla!");
+            }
+            else
+            {
+                int n = Convert.ToInt16(num_box.Text);
+                int d = Convert.ToInt16(den_box.Text);
+                Frazione frazione = new Frazione(n, d);
+                ris_box.Text = frazione.divisione(n, d).ToString();
+            }
         }
 
         private void sem_btn_Click(object sender, EventArgs e)
         {
-            int n = Convert.ToInt16(num_box.Text);
-            int d = Convert.ToInt16(den_box.Text);
-            Frazione frazione = new Frazione(n, d);
-            frazione.Semplificazione();
-            ris_box.Text = $"{frazione.Numeratore.ToString()} / {frazione.Denominatore.ToString()}";
+            if (string.IsNullOrEmpty(num_box.Text) || string.IsNullOrEmpty(den_box.Text))
+            {
+                MessageBox.Show("Non hai inserito nulla!");
+            }
+            else
+            {
+                int n = Convert.ToInt16(num_box.Text);
+                int d = Convert.ToInt16(den_box.Text);
+                Frazione frazione = new Frazione(n, d);
+                frazione.Semplificazione();
+                ris_box.Text = $"{frazione.Numeratore} / {frazione.Denominatore}";
+            }
         }
     }
     class Frazione
