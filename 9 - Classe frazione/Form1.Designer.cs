@@ -90,6 +90,7 @@
             this.div_btn.TabIndex = 5;
             this.div_btn.Text = "divisione";
             this.div_btn.UseVisualStyleBackColor = true;
+            this.div_btn.Click += new System.EventHandler(this.div_btn_Click);
             // 
             // molt_btn
             // 
@@ -99,6 +100,7 @@
             this.molt_btn.TabIndex = 6;
             this.molt_btn.Text = "moltiplicazione";
             this.molt_btn.UseVisualStyleBackColor = true;
+            this.molt_btn.Click += new System.EventHandler(this.molt_btn_Click);
             // 
             // sot_btn
             // 

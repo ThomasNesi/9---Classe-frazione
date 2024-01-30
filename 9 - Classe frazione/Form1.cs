@@ -31,6 +31,20 @@ namespace _9___Classe_frazione
             int d = Convert.ToInt16(den_box.Text);
             ris_box.Text = frazione.sottrai(n, d).ToString();
         }
+
+        private void molt_btn_Click(object sender, EventArgs e)
+        {
+            int n = Convert.ToInt16(num_box.Text);
+            int d = Convert.ToInt16(den_box.Text);
+            ris_box.Text = frazione.moltiplica(n, d).ToString();
+        }
+
+        private void div_btn_Click(object sender, EventArgs e)
+        {
+            float n = Convert.ToInt16(num_box.Text);
+            float d = Convert.ToInt16(den_box.Text);
+            ris_box.Text = frazione.divisione(n, d).ToString();
+        }
     }
     class Frazione
     {
@@ -53,6 +67,10 @@ namespace _9___Classe_frazione
             denominatore = 0;
         }
 
+        public int semplificazione()
+        {
+            return numeratore;
+        }
         public int somma(int n, int d)
         {
             int s = n + d;
@@ -63,13 +81,15 @@ namespace _9___Classe_frazione
             int s = n - d;
             return s;
         }
-        public int moltiplica(int num)
+        public int moltiplica(int n, int d)
         {
-            return numeratore;
+            int s = n * d;
+            return s;
         }
-        public int divisione(int num)
+        public float divisione(float n, float d)
         {
-            return denominatore;
+            float s = n / d;
+            return s;
         }
     }
 }
