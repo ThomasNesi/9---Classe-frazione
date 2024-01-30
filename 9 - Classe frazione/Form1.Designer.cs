@@ -120,6 +120,7 @@
             this.sem_btn.TabIndex = 8;
             this.sem_btn.Text = "semplifica";
             this.sem_btn.UseVisualStyleBackColor = true;
+            this.sem_btn.Click += new System.EventHandler(this.sem_btn_Click);
             // 
             // label2
             // 

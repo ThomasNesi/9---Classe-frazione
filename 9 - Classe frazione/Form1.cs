@@ -12,16 +12,15 @@ namespace _9___Classe_frazione
 {
     public partial class Form1 : Form
     {
-        Frazione frazione = new Frazione();
         public Form1()
         {
             InitializeComponent();
         }
-
         private void ad_btn_Click(object sender, EventArgs e)
         {
             int n = Convert.ToInt16(num_box.Text);
             int d = Convert.ToInt16(den_box.Text);
+            Frazione frazione = new Frazione(n, d);
             ris_box.Text = frazione.somma(n, d).ToString();
         }
 
@@ -29,6 +28,7 @@ namespace _9___Classe_frazione
         {
             int n = Convert.ToInt16(num_box.Text);
             int d = Convert.ToInt16(den_box.Text);
+            Frazione frazione = new Frazione(n, d);
             ris_box.Text = frazione.sottrai(n, d).ToString();
         }
 
@@ -36,14 +36,25 @@ namespace _9___Classe_frazione
         {
             int n = Convert.ToInt16(num_box.Text);
             int d = Convert.ToInt16(den_box.Text);
+            Frazione frazione = new Frazione(n, d);
             ris_box.Text = frazione.moltiplica(n, d).ToString();
         }
 
         private void div_btn_Click(object sender, EventArgs e)
         {
-            float n = Convert.ToInt16(num_box.Text);
-            float d = Convert.ToInt16(den_box.Text);
+            int n = Convert.ToInt16(num_box.Text);
+            int d = Convert.ToInt16(den_box.Text);
+            Frazione frazione = new Frazione(n, d);
             ris_box.Text = frazione.divisione(n, d).ToString();
+        }
+
+        private void sem_btn_Click(object sender, EventArgs e)
+        {
+            int n = Convert.ToInt16(num_box.Text);
+            int d = Convert.ToInt16(den_box.Text);
+            Frazione frazione = new Frazione(n, d);
+            frazione.Semplificazione();
+            ris_box.Text = $"{frazione.Numeratore.ToString()} / {frazione.Denominatore.ToString()}";
         }
     }
     class Frazione
@@ -61,15 +72,28 @@ namespace _9___Classe_frazione
             get { return denominatore; }
             set { denominatore = value; }
         }
-        public Frazione()
+        public Frazione(int num, int den)
         {
-            numeratore = 0;
-            denominatore = 0;
+            Numeratore = num;
+            Denominatore = den;
         }
 
-        public int semplificazione()
+        public void Semplificazione()
         {
-            return numeratore;
+            int p = mcd(Numeratore, Denominatore);
+            Numeratore /= p;
+            Denominatore /= p;
+            
+        }
+        public int mcd(int n, int d)
+        {
+            while(d != 0)
+            {
+                int t = d;
+                d = n % d;
+                n = t;
+            }
+            return n;
         }
         public int somma(int n, int d)
         {
