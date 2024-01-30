@@ -12,17 +12,27 @@ namespace _9___Classe_frazione
 {
     public partial class Form1 : Form
     {
+        Frazione frazione = new Frazione();
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void ad_btn_Click(object sender, EventArgs e)
         {
+            int n = Convert.ToInt16(num_box.Text);
+            int d = Convert.ToInt16(den_box.Text);
+            ris_box.Text = frazione.somma(n, d).ToString();
+        }
 
+        private void sot_btn_Click(object sender, EventArgs e)
+        {
+            int n = Convert.ToInt16(num_box.Text);
+            int d = Convert.ToInt16(den_box.Text);
+            ris_box.Text = frazione.sottrai(n, d).ToString();
         }
     }
-    class frazione
+    class Frazione
     {
         private int numeratore;
         private int denominatore;
@@ -37,19 +47,21 @@ namespace _9___Classe_frazione
             get { return denominatore; }
             set { denominatore = value; }
         }
-        public frazione()
+        public Frazione()
         {
             numeratore = 0;
             denominatore = 0;
         }
 
-        public int somma()
+        public int somma(int n, int d)
         {
-            return numeratore;
+            int s = n + d;
+            return s;
         }
-        public int sottrai()
+        public int sottrai(int n, int d)
         {
-            return denominatore;
+            int s = n - d;
+            return s;
         }
         public int moltiplica(int num)
         {
